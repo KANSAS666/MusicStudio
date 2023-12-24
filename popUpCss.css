@@ -1,0 +1,61 @@
+.checkselect {
+  display: inline-block;
+  min-width: 200px;
+}
+
+.checkselect-control {
+  padding: 0;
+}
+
+.checkselect-control select {
+  width: 100%;
+}
+
+.checkselect-popup {
+  border: 1px solid #ced4da;
+  background: #fff;
+  z-index: 9999;
+  max-height: 200px; /* Добавьте максимальную высоту для прокрутки, если необходимо */
+  overflow-y: auto; /* Включите вертикальную прокрутку, если элементы не помещаются на экране */
+}
+
+.checkselect-popup label {
+  display: block; /* Этот стиль сделает элементы вертикальными */
+  padding: 4px 6px;
+  font-weight: normal;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkselect-popup label:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.checkselect-popup input {
+  margin: 0;
+}
+
+.checkselect-popup fieldset {
+  border: none;
+}
+
+.checkselect-popup fieldset input {
+  left: 15px;
+}
+
+.checkselect-popup fieldset label {
+  padding-left: 32px;
+}
+
+.checkselect-popup legend {
+  padding: 5px 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.custom-text {
+  font-weight: bold;
+  color: #FF0000; /* Красный цвет текста */
+  /* Другие стили, которые вы хотите применить */
+}

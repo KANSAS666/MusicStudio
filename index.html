@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Авторизация</title>
+
+      <link rel="stylesheet" href="css/login.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <style>
+    body {
+  /*background-color: #E74C3C; */
+  background-image: url('img/musicStudioArt.png'); /* Путь к изображению фона */
+  background-size: cover; /* Растягиваем изображение на всю область фона */
+  background-repeat: no-repeat
+}
+  </style>
+  <div class="middle">
+  <h1>Авторизация</h1>
+  
+  <!--  Fancy inputs  -->
+  <div id="fancy-inputs">
+    <label class="input">
+      <input type="password">
+      <span><span>Пароль</span></span>
+    </label>
+  </div>
+  
+  <div id="fancy-radio">
+    <input type="radio" name="group" id="admin" class="pull-left" style="display: none;">
+    <label class="radio admin" for="admin">Администратор</label>
+
+    <input type="radio" name="group" id="soundDesigner" class="pull-left" style="display: none;">
+    <label class="radio soundDesigner" for="soundDesigner">Звукорежиссер</label>
+
+    <input type="radio" name="group" id="accountant" class="pull-left" style="display: none;">
+    <label class="radio accountant" for="accountant">Бухгалтер</label>
+  </div>
+  
+  <a href="" class="btn">Войти</a>
+</div>
+
+<script>
+$(function() {
+  // Обработка нажатия на кнопку "Войти"
+  $('.btn').click(function(e) {
+    e.preventDefault(); // Отменяем стандартное действие кнопки
+
+    // Получаем выбранную роль и пароль
+    var role = $('input[type="radio"]:checked').attr('id');
+    var password = $('input[type="password"]').val();
+
+    // Проверяем пароль в соответствии с выбранной ролью
+    switch(role) {
+      case 'admin':
+        if (password === 'admin123') {
+          // Если пароль верный, переходим на страницу для менеджера
+          window.location.href = 'admin.php';
+        } else {
+          // Если пароль неверный, выводим сообщение
+          alert('Неверный пароль! Пожалуйста, обратитесь к владельцу студии.');
+          $('input[type="password"]').val('');
+        }
+        break;
+
+      case 'soundDesigner':
+        if (password === 'sound123') {
+          // Если пароль верный, переходим на страницу для бухгалтера
+          window.location.href = 'soundDesigner.php';
+        } else {
+          // Если пароль неверный, выводим сообщение
+          alert('Неверный пароль! Пожалуйста, обратитесь к владельцу студии.');
+          $('input[type="password"]').val('');
+        }
+        break;
+
+        case 'accountant':
+        if (password === 'acc123') {
+          // Если пароль верный, переходим на страницу для бухгалтера
+          window.location.href = 'accountant.php';
+        } else {
+          // Если пароль неверный, выводим сообщение
+          alert('Неверный пароль! Пожалуйста, обратитесь к владельцу студии.');
+          $('input[type="password"]').val('');
+        }
+        break;
+    }
+  });
+});
+  </script>
+  
+    <script src="js/index.js"></script>
+
+
+</body>
+</html>
